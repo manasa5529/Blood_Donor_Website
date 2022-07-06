@@ -1,0 +1,100 @@
+<!--FindDonor page with tables-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Find Donor</title>
+</head>
+<link rel="stylesheet" href="FDStyle.css">
+<script src="FDScript.js"></script>
+
+<body>
+  <h1>FIND A SAVIOUR:</h1>
+  <br>
+  <form name="FindDonorForm" method="POST" action="Fetch.php">
+    <table class="Container">
+      <tr class="groups">
+        <td> <label> Blood Group: </label> </td>
+        <td>
+          <select name="blood_grp" required>
+            <optgroup>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="A1+">A1+</option>
+              <option value="A1-">A1-</option>
+              <option value="A2+">A2+</option>
+              <option value="A2-">A2-</option>
+              <option value="A1B+">A1B+</option>
+              <option value="A1B-">A1B-</option>
+              <option value="A2B+">A2B+</option>
+              <option value="A2B-">A2B-</option>
+              <option value="BBG">Bombay blood group</option>
+            </optgroup>
+          </select>
+        </td>
+      </tr>
+
+      <tr class="groups">
+        <td> <label> State: </label> </td>
+        <td>
+          <select name="state" id="state" onchange="SttoDis(this.id,'district')" required>
+            <optgroup>
+              <option value="">Select the State</option>
+              <option value="Andhra Pradesh"> Andhra Pradesh </option>
+              <option value="Others"> Others </option>
+            </optgroup>
+          </select>
+        </td>
+      </tr>
+
+      <tr class="groups">
+        <td> <label> District: </label> </td>
+        <td>
+          <select name="district" id="district" onchange="DistoDiv(this.id,'division')" required>
+            <optgroup>
+              <option value=""> Please select State first </option>
+            </optgroup>
+          </select>
+        </td>
+      </tr>
+
+      <tr class="groups">
+        <td> <label> Division: </label> </td>
+        <td>
+          <select name="division" id="division" onchange="DivtoMan(this.id,'mandal')">
+            <optgroup>
+              <option value=""> Please select District first </option>
+            </optgroup>
+          </select>
+        </td>
+      </tr>
+
+      <tr class="groups">
+        <td> <label> Sub-Division / Mandal: </label> </td>
+        <td>
+          <select name="mandal" id="mandal">
+            <optgroup>
+              <option value=""> Please select Division first </option>
+            </optgroup>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2" align="center">
+          <br> <br>
+          <input type="submit" name="Fetch" value="Fetch" onclick="Validate()">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+
+</html>
